@@ -1,12 +1,21 @@
-extends ../layout
+doctype html
+html
+  head
+    title= login
 
-block content
-  h1 Login
-  form(action="/login" ,method = "post")
-        .form-group
-            label(for="name") Email
-            input#email(type="text", class="form-control", name = "email")
-        .form-group
-            label(for="password") Password
-            input#password(type="password", class="form-control", name = "password")
-        input(type="submit", class="btn btn-info", value="Login")
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    link(rel="stylesheet", href="/stylesheets/menu.css")
+  body
+    h1 Login
+    form(action="/login" ,method = "post")
+            .form-group
+                label(for="name") Email
+                input#email(type="text", class="form-control", name = "email")
+            .form-group
+                label(for="password") Password
+                input#password(type="password", class="form-control", name = "password")
+            input(type="submit", class="btn btn-info", value="Login")  
+            a(href="/register" class = "btn btn-info") Register 
