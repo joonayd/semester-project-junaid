@@ -22,15 +22,7 @@ router.post("/login", async function (req, res, next) {
   req.session.user = user;
   return res.redirect("/");
 });
-router.post("/register", async function (req, res) {
-  // const { name, email, password } = req.body;
-  // let user = {};
-  // user.name = name;
-  // user.email = email;
-  // user.password = password;
-  // let userModel = new User(user);
-  // await userModel.save();
-  // res.redirect("/");
+router.post("/register", async function (req, res, next) {
   let user = new User(req.body);
   user.name = req.body.name;
   user.email = req.body.email;
